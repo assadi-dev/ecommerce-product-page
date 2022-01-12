@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 1rem 0.8rem;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-height: 30vh;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.35s linear;
+    -webkit-transition: all 0.35s linear;
+    -moz-transition: all 0.35s linear;
+    -ms-transition: all 0.35s linear;
+    -o-transition: all 0.35s linear;
+}
+
+#cart img {
+    width: 25px;
+    height: 25px;
+}
+
+#avatar img {
+    width: 25px;
+    height: 25px;
+}
+
+#logo {
+    margin
+}

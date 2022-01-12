@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+#wrapper {
+    max-width: 375px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mx-1 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.mr-1 {
+    margin-right: 0.75rem;
+}
+
+.ml-1 {
+    margin-left: 0.75rem;
+}
+
+body {
+    cursor: default;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}

@@ -7,6 +7,8 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <title>Frontend Mentor | E-commerce product page</title>
 
@@ -25,10 +27,29 @@
 
 <body>
 
-  Collections Men Women About Contact Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are your
-  perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can
-  offer. $125.00 50%
-  $250.00 0 Add to cart
+  <main>
+    <header>
+      <nav class="navbar">
+        <div class="left-navigation flex">
+          <button id="menu"><img src="./assets/images/icon-menu.svg" alt="hamburger menu"></button>
+          <a href="/" class="mx-1"><img id="logo" src="./assets/images/logo.svg" alt="sneaker-logo"></a>
+
+
+        </div>
+        <div class="right-navigation flex justify-end">
+          <span id="cart" class="mr-1"> <img src="./assets/images/icon-cart.svg" alt="cart"> </span>
+          <span id="avatar"> <img src="./assets/images/image-avatar.png" alt="avatar"> </span>
+        </div>
+      </nav>
+      <div class="slider">
+        <img src="./assets//images/image-product-1.jpg" alt="" srcset="">
+        <div class="slider-control">
+          <button id="prev"></button>
+          <button id="next"></button>
+        </div>
+      </div>
+    </header>
+  </main>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
