@@ -62,3 +62,14 @@
 #next {
     right: 4%;
 }
+
+#next img,
+#prev img {
+    height: 12px;
+    width: 12px;
+}
+
+#next:active,
+#prev:active {
+    opacity: 0.5;
+}
