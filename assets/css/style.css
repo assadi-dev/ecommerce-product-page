@@ -73,3 +73,49 @@
 #prev:active {
     opacity: 0.5;
 }
+
+#promo-percent {
+    padding: 0.2rem;
+    background-color: var(--orange-light);
+    color: var(--orange);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.35rem;
+}
+
+#promo-price {
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+#add-cart {
+    padding: 1rem 1.5rem;
+    background-color: var(--orange);
+    border-radius: 8px;
+    width: 100%;
+    font-weight: 700;
+    box-shadow: 0px 25px 15px -8px var(--orange-light);
+}
+
+#quantity-info {
+    padding: 1rem 1.5rem;
+    background-color: var(--grayish-blue);
+    border-radius: 8px;
+    width: 100%;
+    font-weight: 700;
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+.price {
+    font-size: 1.5rem;
+}
