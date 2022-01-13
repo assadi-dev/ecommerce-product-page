@@ -5,7 +5,27 @@
     padding: 1rem 0.8rem;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 150;
+}
+
+#menu-list {
+    position: fixed;
+    left: 0;
+    background-color: #fff;
+    top: 0;
+    width: 70%;
+    z-index: 250;
+    height: 100%;
+    transition: all 0.35s ease-in;
+    -webkit-transition: all 0.35s ease-in;
+    -moz-transition: all 0.35s ease-in;
+    -ms-transition: all 0.35s ease-in;
+    -o-transition: all 0.35s ease-in;
+}
+
+#menu-list ul {
+    padding-top: 1rem;
+    padding-left: 1.2rem;
 }
 
 .slider {
@@ -25,9 +45,34 @@
     -o-transition: all 0.35s linear;
 }
 
+#cart {
+    position: relative;
+}
+
 #cart img {
     width: 25px;
     height: 25px;
+}
+
+#cart-badge {
+    background-color: var(--orange);
+    padding: 0rem 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 40%;
+    -webkit-border-radius: 40%;
+    -moz-border-radius: 40%;
+    -ms-border-radius: 40%;
+    -o-border-radius: 40%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    color: var(--white);
 }
 
 #avatar img {
@@ -133,4 +178,36 @@
 #quantity-number {
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+    transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s eas;
+    -moz-transition: all 0.35s eas;
+    -ms-transition: all 0.35s eas;
+    -o-transition: all 0.35s eas;
+}
+
+.open-menu {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    z-index: 250;
+}
+
+.close-menu {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
 }

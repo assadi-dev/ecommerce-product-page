@@ -29,15 +29,26 @@
 
     <main>
         <header>
-            <nav class="navbar">
+            <nav class="navbar ">
                 <div class="left-navigation flex">
                     <button id="menu" class="mr-1"><img src="./assets/images/icon-menu.svg" alt="hamburger-menu"></button>
                     <a href="/" class="mx-1"><img id="logo" src="./assets/images/logo.svg" alt="sneaker-logo"></a>
+                    <div id="menu-list" class="close-menu">
+                        <ul>
+                            <li class="mb-3"> <button id="close"> <img src="./assets/images/icon-close.svg" /> </button>
+                            </li>
+                            <li class="text-bold mb-2">Collections</li>
+                            <li class="text-bold mb-2">Men</li>
+                            <li class="text-bold mb-2">Women</li>
+                            <li class="text-bold mb-2">About</li>
+                            <li class="text-bold mb-2">Contact</li>
+                        </ul>
 
-
+                    </div>
                 </div>
                 <div class="right-navigation flex justify-end">
-                    <span id="cart" class="mr-1"> <img src="./assets/images/icon-cart.svg" alt="cart"> </span>
+                    <span id="cart" class="mr-1"> <img src="./assets/images/icon-cart.svg" alt="cart"> <span
+              id="cart-badge">0</span> </span>
                     <span id="avatar"> <img src="./assets/images/image-avatar.png" alt="avatar"> </span>
                 </div>
             </nav>
@@ -82,5 +93,6 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
     </footer>
 </body>
+<script src="./assets/js/main.js"></script>
 
 </html>
