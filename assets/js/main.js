@@ -3,12 +3,12 @@
 const hamBtn = document.querySelector("#menu");
 const closeBtn = document.querySelector("#close");
 const menuList = document.querySelector("#menu-list");
-let index = false;
+let isOpen = false;
 
 const toggleMenu = () => {
-    index = !index;
+    isOpen = !isOpen;
 
-    if (index) {
+    if (isOpen) {
         const div = document.createElement("div");
         div.className = "backdrop";
         document.body.appendChild(div);
@@ -76,14 +76,13 @@ product.forEach((item) => {
 
 /**thumbnail click */
 const thumbnailCards = document.querySelectorAll(".thumbnail-card");
+const sliderItems = document.querySelectorAll(".slider-items");
 
 const changeSlide = (index) => {
-    let slider = document.querySelectorAll(".slider-items");
-
-    slider.forEach((elements) => {
+    sliderItems.forEach((elements) => {
         elements.classList.remove("current");
     });
-    slider[index].classList.add("current");
+    sliderItems[index].classList.add("current");
 };
 
 function handleClickThumbnail() {
@@ -100,3 +99,36 @@ function handleClickThumbnail() {
 thumbnailCards.forEach((element) => {
     element.addEventListener("click", handleClickThumbnail);
 });
+
+// mobile slide button
+
+const next = document.querySelector("#next");
+const prev = document.querySelector("#prev");
+let index = 0;
+
+const nextSlider = () => {
+    if (index < product.length - 1) {
+        sliderItems[index].classList.remove("current");
+        index++;
+        sliderItems[index].classList.add("current");
+    } else {
+        sliderItems[index].classList.remove("current");
+        index = 0;
+        sliderItems[index].classList.add("current");
+    }
+};
+
+const prevSlider = () => {
+    if (index > 0) {
+        sliderItems[index].classList.remove("current");
+        index--;
+        sliderItems[index].classList.add("current");
+    } else {
+        sliderItems[index].classList.remove("current");
+        index = product.length - 1;
+        sliderItems[index].classList.add("current");
+    }
+};
+
+next.addEventListener("click", nextSlider);
+prev.addEventListener("click", prevSlider);
