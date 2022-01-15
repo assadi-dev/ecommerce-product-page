@@ -4,6 +4,7 @@ const hamBtn = document.querySelector("#menu");
 const closeBtn = document.querySelector("#close");
 const menuList = document.querySelector("#menu-list");
 let isOpen = false;
+let index = 0;
 
 const toggleMenu = () => {
     isOpen = !isOpen;
@@ -91,8 +92,9 @@ function handleClickThumbnail() {
     });
     this.classList.add("thumb-current");
     let id = parseInt(this.getAttribute("data-item"));
-    let imgIndex = product.findIndex((item) => item.id === id);
 
+    let imgIndex = product.findIndex((item) => item.id === id);
+    index = imgIndex;
     changeSlide(imgIndex);
 }
 
@@ -104,29 +106,36 @@ thumbnailCards.forEach((element) => {
 
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
-let index = 0;
 
 const nextSlider = () => {
     if (index < product.length - 1) {
         sliderItems[index].classList.remove("current");
+        thumbnailCards[index].classList.remove("thumb-current");
         index++;
         sliderItems[index].classList.add("current");
+        thumbnailCards[index].classList.add("thumb-current");
     } else {
         sliderItems[index].classList.remove("current");
+        thumbnailCards[index].classList.remove("thumb-current");
         index = 0;
         sliderItems[index].classList.add("current");
+        thumbnailCards[index].classList.add("thumb-current");
     }
 };
 
 const prevSlider = () => {
     if (index > 0) {
         sliderItems[index].classList.remove("current");
+        thumbnailCards[index].classList.remove("thumb-current");
         index--;
         sliderItems[index].classList.add("current");
+        thumbnailCards[index].classList.add("thumb-current");
     } else {
         sliderItems[index].classList.remove("current");
+        thumbnailCards[index].classList.remove("thumb-current");
         index = product.length - 1;
         sliderItems[index].classList.add("current");
+        thumbnailCards[index].classList.add("thumb-current");
     }
 };
 
