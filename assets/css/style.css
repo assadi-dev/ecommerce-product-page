@@ -166,6 +166,11 @@
     font-size: 1.5rem;
 }
 
+#price {
+    display: flex;
+    justify-content: space-between;
+}
+
 .price {
     font-size: 1.5rem;
 }
@@ -212,6 +217,10 @@
     -o-transform: translateX(-100%);
 }
 
+#thumbnails {
+    display: none;
+}
+
 
 /**media queries**/
 
@@ -238,7 +247,7 @@
         -o-transform: translateX(0);
     }
     #menu-list {
-        position: relative;
+        position: initial;
         width: 100%;
     }
     #menu-list ul {
@@ -254,5 +263,79 @@
     }
     #close {
         display: none;
+    }
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(2, .40fr);
+        grid-column-gap: 5rem;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .slider {
+        max-width: 450px;
+    }
+    .slider img {
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+    }
+    #prev,
+    #next {
+        display: none;
+    }
+    #thumbnails {
+        display: flex;
+        justify-content: center;
+    }
+    .thumbnail-card {
+        height: 100px;
+        width: 100px;
+        border-radius: 12px;
+        background-color: #444;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        flex-grow: 1;
+    }
+    .thumbnail-card:not(:last-child) {
+        margin-right: 12px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #price {
+        display: inline-block;
+    }
+    #price p {
+        margin-top: 0.75rem;
+    }
+    .action-zone {
+        display: grid;
+        grid-template-columns: 30% 60%;
+        align-items: center;
+        grid-column-gap: 1rem;
+    }
+    #add-quantity,
+    #remove-quantity {
+        font-size: 1.2rem;
+    }
+    #quantity-number {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    .product-description {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .product-description .title {
+        font-size: 2.3rem;
+    }
+    .company {
+        font-size: 1.5rem;
     }
 }
