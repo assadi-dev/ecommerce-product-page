@@ -141,3 +141,25 @@ a {
 .text-grayish-blue {
     color: var(--dark-grayish-blue)
 }
+
+@media screen and (min-width: 768px) {
+    #wrapper {
+        max-width: 1444px;
+    }
+    .mx-sm-1 {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+    }
+    .mx-sm-2 {
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+    .mx-sm-3 {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    .mx-sm-4 {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
