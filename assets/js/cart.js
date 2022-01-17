@@ -20,6 +20,7 @@ const addItem = () => {
         newprice = currentPrice * quantityItem;
     }
     showPrice.textContent = `$${newprice}`;
+    createcartBadge(quantityItem);
 };
 
 const removeItem = () => {
@@ -31,6 +32,7 @@ const removeItem = () => {
         quantityItem = 0;
     }
     showPrice.textContent = `$${newprice}`;
+    createcartBadge(quantityItem);
 };
 
 quantity.textContent = quantityItem;
@@ -40,3 +42,10 @@ addProductBtn.addEventListener("click", addItem);
 removeQuantity.addEventListener("click", removeItem);
 
 /** count item cart  */
+
+const createcartBadge = (number) => {
+    let span = document.createElement("span");
+    span.setAttribute("id", "cart-badge");
+    document.querySelector("#cart").append(span);
+    span.textContent = number;
+};
