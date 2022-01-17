@@ -1,6 +1,7 @@
 const addProductBtn = document.querySelector("#add-quantity");
 const removeQuantity = document.querySelector("#remove-quantity");
 const quantity = document.querySelector("#quantity-number");
+const promoPercent = document.querySelector("#promo-percent");
 const oldPrice = 250;
 const percent = 50;
 const reduction = (oldPrice * percent) / 100;
@@ -8,6 +9,7 @@ const currentPrice = oldPrice - reduction;
 
 let quantityItem = 0;
 let newprice = currentPrice;
+promoPercent.textContent = percent + "$";
 
 const showPrice = document.querySelector(".price");
 
@@ -36,3 +38,5 @@ showPrice.textContent = `$${newprice}`;
 
 addProductBtn.addEventListener("click", addItem);
 removeQuantity.addEventListener("click", removeItem);
+
+/** count item cart  */
