@@ -254,8 +254,9 @@ header {
 }
 
 .cart-card {
+    display: none;
     position: absolute;
-    top: 120%;
+    top: 130%;
     width: 95%;
     background-color: #fff;
     left: 50%;
@@ -268,8 +269,21 @@ header {
 }
 
 .card-header {
-    padding: 12px;
-    border-bottom: 2px solid red;
+    padding: 16px;
+    border-bottom: 1px solid var(--dark-grayish-blue);
+    font-weight: 700;
+}
+
+.card-body {
+    min-height: 220px;
+}
+
+.cart-open {
+    display: block;
+}
+
+.cart-close {
+    display: none;
 }
 
 .empty {
@@ -278,6 +292,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
 }
 
 

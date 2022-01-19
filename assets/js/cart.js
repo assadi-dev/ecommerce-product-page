@@ -49,3 +49,30 @@ const createcartBadge = (number) => {
     document.querySelector("#cart").append(span);
     span.textContent = number;
 };
+
+/** Cart icon  */
+
+const cartCard = document.querySelector(".cart-card");
+const cartBtn = document.querySelector("#cart");
+let isCartOpen = false;
+
+const openCart = () => {
+    cartCard.classList.remove("cart-close");
+    cartCard.classList.add("cart-open");
+};
+
+const closeCart = () => {
+    cartCard.classList.remove("cart-open");
+    cartCard.classList.add("cart-close");
+};
+
+const toogleCartShow = () => {
+    isCartOpen = !isCartOpen;
+    if (isCartOpen) {
+        openCart();
+    } else {
+        closeCart();
+    }
+};
+
+cartBtn.addEventListener("click", toogleCartShow);
