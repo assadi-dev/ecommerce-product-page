@@ -436,6 +436,17 @@ header {
     .thumbnail-card:not(:last-child) {
         margin-right: 12px;
     }
+    .cart-card {
+        max-width: 380px;
+        left: auto;
+        right: 5%;
+        top: 100%;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
 }
 
 @media screen and (min-width: 1200px) {
