@@ -253,6 +253,33 @@ header {
     display: none;
 }
 
+.cart-card {
+    position: absolute;
+    top: 120%;
+    width: 95%;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.card-header {
+    padding: 12px;
+    border-bottom: 2px solid red;
+}
+
+.empty {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /**media queries**/
 
