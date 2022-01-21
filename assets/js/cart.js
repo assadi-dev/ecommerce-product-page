@@ -78,11 +78,42 @@ cartBtn.addEventListener("click", toogleCartShow);
 /** Add to cart button */
 
 const addToCartBtn = document.querySelector("#add-cart");
+const removeCartArticle = document.querySelector(".remove-item-btn");
 
 const addCart = () => {
     if (quantityItem >= 1) {
         createcartBadge(quantityItem);
+        openCart();
+    }
+};
+const isCartEmpty = () => {
+    let cardBody = document.querySelector(".card-body");
+    cardBody.classList.add("empty");
+    let p = document.createElement("p");
+    p.textContent = "You cart is empty";
+    cardBody.append(p);
+};
+
+const removeItemCart = () => {
+    if (quantityItem >= 1) {
+        document.querySelector("#cart-badge").remove();
+        document.querySelector(".card-body ul").remove();
+        document.querySelector(".checkout-section").remove();
+        isCartEmpty();
+    }
+};
+
+const addItemCart = () => {
+    if (quantityItem >= 1) {
+        let ul = document.createElement("ul");
+        let li = document.createElement("li");
+        let div = document.createElement("div");
+        div.classList.add("cart-items");
+        let img = document.createElement("img");
+        img.classList.add("cart-items-thumbnail");
+        img.src = "./assets/images/image-product-1-thumbnail.jpg";
     }
 };
 
 addToCartBtn.addEventListener("click", addCart);
+removeCartArticle.addEventListener("click", removeItemCart);
