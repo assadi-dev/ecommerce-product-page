@@ -95,12 +95,10 @@ const isCartEmpty = () => {
 };
 
 const removeItemCart = () => {
-    if (quantityItem >= 1) {
-        document.querySelector("#cart-badge").remove();
-        document.querySelector(".card-body ul").remove();
-        document.querySelector(".checkout-section").remove();
-        isCartEmpty();
-    }
+    document.querySelector("#cart-badge").remove();
+    document.querySelector(".card-body ul").remove();
+    document.querySelector(".checkout-section").remove();
+    isCartEmpty();
 };
 
 const addItemCart = () => {
@@ -143,7 +141,8 @@ const addItemCart = () => {
 
 addToCartBtn.addEventListener("click", addCart);
 
-const removeCartArticle = document.querySelector(".remove-item-btn");
-if (removeCartArticle) {
+let exist = !!document.querySelector(".remove-item-btn");
+if (exist) {
+    let removeCartArticle = document.querySelector(".remove-item-btn");
     removeCartArticle.addEventListener("click", removeItemCart);
 }
