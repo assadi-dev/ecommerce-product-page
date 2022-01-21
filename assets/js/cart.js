@@ -20,7 +20,6 @@ const addItem = () => {
         newprice = currentPrice * quantityItem;
     }
     showPrice.textContent = `$${newprice}`;
-    createcartBadge(quantityItem);
 };
 
 const removeItem = () => {
@@ -32,7 +31,6 @@ const removeItem = () => {
         quantityItem = 0;
     }
     showPrice.textContent = `$${newprice}`;
-    createcartBadge(quantityItem);
 };
 
 quantity.textContent = quantityItem;
@@ -76,3 +74,15 @@ const toogleCartShow = () => {
 };
 
 cartBtn.addEventListener("click", toogleCartShow);
+
+/** Add to cart button */
+
+const addToCartBtn = document.querySelector("#add-cart");
+
+const addCart = () => {
+    if (quantityItem >= 1) {
+        createcartBadge(quantityItem);
+    }
+};
+
+addToCartBtn.addEventListener("click", addCart);
