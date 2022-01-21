@@ -78,11 +78,11 @@ cartBtn.addEventListener("click", toogleCartShow);
 /** Add to cart button */
 
 const addToCartBtn = document.querySelector("#add-cart");
-const removeCartArticle = document.querySelector(".remove-item-btn");
 
 const addCart = () => {
     if (quantityItem >= 1) {
         createcartBadge(quantityItem);
+        addItemCart();
         openCart();
     }
 };
@@ -104,16 +104,46 @@ const removeItemCart = () => {
 };
 
 const addItemCart = () => {
-    if (quantityItem >= 1) {
-        let ul = document.createElement("ul");
-        let li = document.createElement("li");
-        let div = document.createElement("div");
-        div.classList.add("cart-items");
-        let img = document.createElement("img");
-        img.classList.add("cart-items-thumbnail");
-        img.src = "./assets/images/image-product-1-thumbnail.jpg";
-    }
+    let cardBody = document.querySelector(".card-body");
+    cardBody.classList.remove("empty");
+    document.querySelector(".card-body p").remove();
+    let ul = document.createElement("ul");
+    let li = document.createElement("li");
+    let p = document.createElement("p");
+    let totalItem = document.createElement("span");
+    let deletBtn = document.createElement("button");
+    let deleteIcone = document.createElement("img");
+    deleteIcone.src = "./assets/images//icon-delete.svg";
+    deletBtn.classList.add("remove-item-btn");
+    deletBtn.append(deleteIcone);
+    totalItem.classList.add("cart-items-total");
+    textItem = document.createElement("p");
+    textItem.textContent = `$${currentPrice} x ${quantityItem}`;
+    totalItem.textContent = `$${currentPrice * quantityItem}`;
+    textItem.append(totalItem);
+    let container = document.createElement("div");
+    container.classList.add("cart-items");
+    let img = document.createElement("img");
+    img.classList.add("cart-items-thumbnail");
+    img.src = "./assets/images/image-product-1-thumbnail.jpg";
+    let description = document.createElement("div");
+    description.classList.add("cart-items-descriptions");
+    let title = p;
+    title.textContent = "Autumn Limited Edition";
+    title.classList.add("cart-items-title");
+    container.append(img);
+    description.append(title);
+    description.append(textItem);
+    container.append(description);
+    container.append(deletBtn);
+    li.append(container);
+    ul.append(li);
+    document.querySelector(".card-body").append(ul);
 };
 
 addToCartBtn.addEventListener("click", addCart);
-removeCartArticle.addEventListener("click", removeItemCart);
+
+const removeCartArticle = document.querySelector(".remove-item-btn");
+if (removeCartArticle) {
+    removeCartArticle.addEventListener("click", removeItemCart);
+}

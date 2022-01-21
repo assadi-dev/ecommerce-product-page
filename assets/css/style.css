@@ -320,6 +320,7 @@ header {
 .cart-items-total {
     font-weight: 700;
     color: var(--black);
+    margin-left: 10%;
 }
 
 .checkout-btn {
