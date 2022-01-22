@@ -13,6 +13,8 @@ promoPercent.textContent = percent + "$";
 
 const showPrice = document.querySelector(".price");
 
+let productItems = [];
+
 const addItem = () => {
     quantityItem++;
     quantity.textContent = quantityItem;
@@ -81,8 +83,15 @@ const addToCartBtn = document.querySelector("#add-cart");
 
 const addCart = () => {
     if (quantityItem >= 1) {
+        if (productItems.length >= 1) {
+            removeItemCart();
+        }
         createcartBadge(quantityItem);
-        addItemCart();
+        productItems = [{ name: "Autumn Limited Edition", price: currentPrice }];
+        productItems.forEach((element) => {
+            addItemCart(element.name, element.price);
+        });
+
         openCart();
     }
 };
@@ -94,6 +103,10 @@ const isCartEmpty = () => {
     cardBody.append(p);
 };
 
+if (productItems.length < 1) {
+    isCartEmpty();
+}
+
 const removeItemCart = () => {
     document.querySelector("#cart-badge").remove();
     document.querySelector(".card-body ul").remove();
@@ -101,7 +114,7 @@ const removeItemCart = () => {
     isCartEmpty();
 };
 
-const addItemCart = () => {
+const addItemCart = (name, price) => {
     let cardBody = document.querySelector(".card-body");
     cardBody.classList.remove("empty");
     document.querySelector(".card-body p").remove();
@@ -111,13 +124,14 @@ const addItemCart = () => {
     let totalItem = document.createElement("span");
     let deletBtn = document.createElement("button");
     let deleteIcone = document.createElement("img");
+
     deleteIcone.src = "./assets/images//icon-delete.svg";
     deletBtn.classList.add("remove-item-btn");
     deletBtn.append(deleteIcone);
     totalItem.classList.add("cart-items-total");
     textItem = document.createElement("p");
-    textItem.textContent = `$${currentPrice} x ${quantityItem}`;
-    totalItem.textContent = `$${currentPrice * quantityItem}`;
+    textItem.textContent = `$${price} x ${quantityItem}`;
+    totalItem.textContent = `$${price * quantityItem}`;
     textItem.append(totalItem);
     let container = document.createElement("div");
     container.classList.add("cart-items");
@@ -127,7 +141,7 @@ const addItemCart = () => {
     let description = document.createElement("div");
     description.classList.add("cart-items-descriptions");
     let title = p;
-    title.textContent = "Autumn Limited Edition";
+    title.textContent = name;
     title.classList.add("cart-items-title");
     container.append(img);
     description.append(title);
@@ -137,12 +151,28 @@ const addItemCart = () => {
     li.append(container);
     ul.append(li);
     document.querySelector(".card-body").append(ul);
+
+    let checkOutDiv = document.createElement("div");
+    let checkOutClass = [
+        "w-100",
+        "text-center",
+        "mt-3",
+        "px-3",
+        "checkout-section",
+    ];
+    checkOutClass.forEach((e) => checkOutDiv.classList.add(e));
+    let checkoutBtn = document.createElement("button");
+    checkoutBtn.classList.add("checkout-btn");
+    checkoutBtn.textContent = "Checkout";
+    checkOutDiv.append(checkoutBtn);
+    cardBody.append(checkOutDiv);
 };
 
 addToCartBtn.addEventListener("click", addCart);
 
 let exist = !!document.querySelector(".remove-item-btn");
-if (exist) {
-    let removeCartArticle = document.querySelector(".remove-item-btn");
+
+let removeCartArticle = !!document.querySelector(".remove-item-btn");
+if (removeCartArticle) {
     removeCartArticle.addEventListener("click", removeItemCart);
 }
