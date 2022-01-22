@@ -30,7 +30,7 @@ const addItem = () => {
 
 const removeItem = () => {
     quantityItem--;
-    if (quantityItem == 0) {
+    if (quantityItem <= 0) {
         quantityItem = 0;
         addToCartBtn.setAttribute("disabled", "true");
         addToCartBtn.classList.add("disabled");
