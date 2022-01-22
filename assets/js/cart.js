@@ -127,6 +127,7 @@ const addItemCart = (name, price) => {
 
     deleteIcone.src = "./assets/images//icon-delete.svg";
     deletBtn.classList.add("remove-item-btn");
+    deletBtn.onclick = removeItemCart;
     deletBtn.append(deleteIcone);
     totalItem.classList.add("cart-items-total");
     textItem = document.createElement("p");
@@ -169,10 +170,3 @@ const addItemCart = (name, price) => {
 };
 
 addToCartBtn.addEventListener("click", addCart);
-
-let exist = !!document.querySelector(".remove-item-btn");
-
-let removeCartArticle = !!document.querySelector(".remove-item-btn");
-if (removeCartArticle) {
-    removeCartArticle.addEventListener("click", removeItemCart);
-}
