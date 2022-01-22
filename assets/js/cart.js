@@ -2,6 +2,7 @@ const addProductBtn = document.querySelector("#add-quantity");
 const removeQuantity = document.querySelector("#remove-quantity");
 const quantity = document.querySelector("#quantity-number");
 const promoPercent = document.querySelector("#promo-percent");
+const addToCartBtn = document.querySelector("#add-cart");
 const oldPrice = 250;
 const percent = 50;
 const reduction = (oldPrice * percent) / 100;
@@ -17,21 +18,26 @@ let productItems = [];
 
 const addItem = () => {
     quantityItem++;
-    quantity.textContent = quantityItem;
+
     if (quantityItem > 0) {
+        addToCartBtn.removeAttribute("disabled");
+        addToCartBtn.removeAttribute("class");
         newprice = currentPrice * quantityItem;
     }
+    quantity.textContent = quantityItem;
     showPrice.textContent = `$${newprice}`;
 };
 
 const removeItem = () => {
-    if (quantityItem > 0) {
-        quantityItem--;
-        quantity.textContent = quantityItem;
-        newprice = quantityItem > 0 ? currentPrice * quantityItem : currentPrice;
-    } else {
+    quantityItem--;
+    if (quantityItem == 0) {
         quantityItem = 0;
+        addToCartBtn.setAttribute("disabled", "true");
+        addToCartBtn.classList.add("disabled");
+    } else {
+        newprice = quantityItem > 0 ? currentPrice * quantityItem : currentPrice;
     }
+    quantity.textContent = quantityItem;
     showPrice.textContent = `$${newprice}`;
 };
 
@@ -79,7 +85,9 @@ cartBtn.addEventListener("click", toogleCartShow);
 
 /** Add to cart button */
 
-const addToCartBtn = document.querySelector("#add-cart");
+if (quantityItem < 1) {
+    addToCartBtn.setAttribute("disabled", "true");
+}
 
 const addCart = () => {
     if (productItems.length >= 1) {

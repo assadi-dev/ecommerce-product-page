@@ -352,6 +352,11 @@ header {
     color: var(--dark-grayish-blue);
 }
 
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 
 /**media queries**/
 
