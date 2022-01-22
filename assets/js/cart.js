@@ -82,10 +82,10 @@ cartBtn.addEventListener("click", toogleCartShow);
 const addToCartBtn = document.querySelector("#add-cart");
 
 const addCart = () => {
+    if (productItems.length >= 1) {
+        removeItemCart();
+    }
     if (quantityItem >= 1) {
-        if (productItems.length >= 1) {
-            removeItemCart();
-        }
         createcartBadge(quantityItem);
         productItems = [{ name: "Autumn Limited Edition", price: currentPrice }];
         productItems.forEach((element) => {
@@ -108,6 +108,7 @@ if (productItems.length < 1) {
 }
 
 const removeItemCart = () => {
+    productItems = [];
     document.querySelector("#cart-badge").remove();
     document.querySelector(".card-body ul").remove();
     document.querySelector(".checkout-section").remove();
